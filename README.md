@@ -29,14 +29,14 @@ Run the tests:
 
 ```bash
 chmod +x runtests.sh
-./runtests.sh
+./sdrgjl-/runtests.sh
 ```
 
 If everything looks OK, you can run the whole project:
 
 ```bash
 chmod +x full_run.sh
-./full_run.sh
+./sdrgjl-/full_run.sh
 ```
 
 This will produce all the figures and compile the LaTeX.
