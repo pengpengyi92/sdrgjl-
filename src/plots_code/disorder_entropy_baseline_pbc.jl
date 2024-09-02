@@ -38,18 +38,18 @@ results_plt = @df results_2000 scatter(:l_adj, :entropy, markercolor = :green,
 ols = lm(@formula(entropy ~ l_adj_log10), results_2000)
 
 plot!(results_plt, results_2000.l_adj, predict(ols), label = "SDRG",
-    colour = :red, linestyle = :dashdot)
+    colour = :blue, linestyle = :dashdot)
 
 saveplot(results_plt, img_path, "entropy_baseline_pbc")
 
 results_plt = @df results_2000 scatter(:l, :entropy, markercolor = :green,
     markershape = :square, alpha = 0.8, xscale = :log10, markersize = 5.0,
     label = L"L = 2000", legend = :bottomright, markerstrokewidth = 2, 
-    markerstrokecolor = :green, dpi = 600,
+    markerstrokecolor = :yellow, dpi = 600,
     # ylims = (1.0, 2.25),
     xlabel = L"l", ylabel = L"S_A")
 
-@df results_1000 scatter!(results_plt, :l, :entropy, color = :blue,
+@df results_1000 scatter!(results_plt, :l, :entropy, color = :red,
     label = L"L = 1000", alpha = 0.8, markerstrokecolor = :blue, markersize = 5.0)
 
 
