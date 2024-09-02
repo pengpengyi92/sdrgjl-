@@ -41,11 +41,11 @@ obc_results_plt = @df results_2000_open scatter(:l_adj, :entropy, markercolor = 
 ols = lm(@formula(entropy ~ l_adj_log10), results_2000_open)
 
 plot!(obc_results_plt, results_2000_open.l_adj, predict(ols), label = "SDRG",
-    colour = :red, linestyle = :dashdot)
+    colour = :blue, linestyle = :dashdot)
 
 saveplot(obc_results_plt, img_path, "entropy_baseline_obc")
 
-obc_results_plt = @df results_2000_open scatter(:l, :entropy, markercolor = :green,
+obc_results_plt = @df results_2000_open scatter(:l, :entropy, markercolor = :yellow,
     markershape = :square, alpha = 0.8, xscale = :log10, markersize = 5.0,
     label = L"L = 2000", legend = :bottomright, markerstrokewidth = 2, 
     markerstrokecolor = :green, dpi = 600,
@@ -53,7 +53,7 @@ obc_results_plt = @df results_2000_open scatter(:l, :entropy, markercolor = :gre
     xlims = (10, 2000),
     xlabel = L"l", ylabel = L"S_A")
 
-@df results_1000_open scatter!(obc_results_plt, :l, :entropy, color = :blue,
+@df results_1000_open scatter!(obc_results_plt, :l, :entropy, color = :red,
     label = L"L = 1000", alpha = 0.8, markerstrokecolor = :blue, markersize = 5.0)
 
 saveplot(obc_results_plt, img_path, "entropy_baseline_obc_raw")
